@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Hello">Hello World, Click Me!</string>
-    <string name="ApplicationName">Scheduler</string>
+  <string name="ApplicationName">Scheduler</string>
+  <string name="event_activity">Events</string>
+  <string name="event_create_text">Create Event</string>
+  <string name="group_activity">Groups</string>
+  <string name="group_create_text">Create Group</string>
+  <string name="user_activity">Users</string>
+  <string name="user_create_text">Create User</string>
+  
+  <string name="label_event_name">Event Name</string>
+  <string name="label_event_desc">Event Description</string>
+  <string name="label_event_time">Event Date and Time</string>
+
+  <string name="label_group_name">Group Name</string>
+  <string name="label_group_desc">Group Description</string>
+  <string name="label_group_owner">Group Owner</string>
+
+  <string name="label_user_name">User Name</string>
+  <string name="label_user_password">Password</string>
+  
+  <string name="event_save_button_text">Save Event</string>
+  <string name="group_save_button_text">Save Group</string>
+  <string name="user_save_button_text">Save User</string>
 </resources>

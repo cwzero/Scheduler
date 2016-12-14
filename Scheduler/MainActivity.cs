@@ -11,20 +11,36 @@ namespace Scheduler
     [Activity(Label = "Scheduler", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
-        int count = 1;
-
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-
-            // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
+            Button eventButton = FindViewById<Button>(Resource.Id.event_activity_button);
+            eventButton.Click += OpenEventActivity;
 
-            // Get our button from the layout resource,
-            // and attach an event to it
-            Button button = FindViewById<Button>(Resource.Id.MyButton);
+            Button groupButton = FindViewById<Button>(Resource.Id.group_activity_button);
+            groupButton.Click += OpenGroupActivity;
 
-            button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
+            Button userButton = FindViewById<Button>(Resource.Id.user_activity_button);
+            userButton.Click += OpenUserActivity;
+        }
+
+        protected async void OpenEventActivity(object sender, EventArgs e)
+        {
+            await EventActivity.initEvents();
+            StartActivity(typeof(EventActivity));
+        }
+
+        protected async void OpenGroupActivity(object sender, EventArgs e)
+        {
+            await GroupActivity.initGroups();
+            StartActivity(typeof(GroupActivity));
+        }
+
+        protected async void OpenUserActivity(object sender, EventArgs e)
+        {
+            await UserActivity.initUsers();
+            StartActivity(typeof(UserActivity));
         }
     }
 }
